@@ -1,0 +1,30 @@
+﻿@model IEnumerable<Album>
+@{
+    ViewData["Title"] = "AlbumsByArtists";
+}
+
+<a asp-action="Index">View All Artists</a>
+<h2>Here is the list of Albums</h2>
+<table style="width:50%">
+    <thead>
+        <tr>
+            <td>ArtistId</td>
+            <th>-</th>
+            <th>AlbumId</th>
+            <th>Title</th>
+            
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (Album e in Model)
+        {
+            <tr>
+                <td>@e.ArtistId</td>
+                <th></th>
+                <td>@e.AlbumId</td>
+                <td>@e.Title</td>
+                <td><a asp-action="Index" asp-route-id=@e.ArtistId>Artist Detail</a></td>
+            </tr>
+        }
+    </tbody>
+</table>

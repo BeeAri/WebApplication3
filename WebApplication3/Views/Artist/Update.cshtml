@@ -1,0 +1,13 @@
+﻿@model Artist
+@{
+    ViewData["Title"] = "Update";
+}
+<a asp-action="Index">View All Artists</a>
+<h2>Update</h2>
+<form method="post">
+    <p>
+        <label asp-for="Name">Your Name:</label>
+        <input asp-for="Name" />
+    </p>
+    <p><button type="submit">Submit</button></p>
+</form>
